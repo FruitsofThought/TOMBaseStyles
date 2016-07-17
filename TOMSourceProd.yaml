@@ -1,0 +1,5 @@
+sources:
+    mapzen:
+        type: TopoJSON
+        #urltogeneratethem:  https://tiles.mountbatten.nl:445/all/{z}/{x}/{y}.topojson
+        url: https://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson

@@ -1,0 +1,14 @@
+textures:
+    icons:
+        url: images/wikipedia.png
+        filtering: mipmap
+        sprites:
+            # define sprites: [x origin, y origin, width, height]
+            wikipedia: [0, 0, 16, 16]
+styles:
+    ui-icons-overlay:
+        base: points
+        texture: icons
+        interactive: true
+        blend: overlay
+        blend_order: 3
