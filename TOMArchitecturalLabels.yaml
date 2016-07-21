@@ -1,15 +1,16 @@
-
-
-
+layers:
     buildings:
-        data: { source: mapzen , layer: architecture}
-        architectural_historical:
-            filter: {"building_architecture_historic": "yes" }
-            draw:
-                text:
-                    priority: 4
-                    text_source: global.TOM_multilanguage_label
-                    font:
-                        fill: #fff
-                        family: Helvetica
-                        size: 18px
+        buildinglabelsgroup:
+            architecturalfilter:
+                filter: {"building_architecture_historic": "yes" }
+                draw:
+                    text:
+                        order: 50
+                        centroid: false
+                        move_into_tile: false
+                        priority: 1
+                        text_source: global.TOM_multilanguage_label
+                        font:
+                            fill: orange
+                            family: Helvetica
+                            size: 18px

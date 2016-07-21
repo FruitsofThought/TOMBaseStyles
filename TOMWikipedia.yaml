@@ -8,6 +8,7 @@ textures:
 styles:
     ui-icons-overlay:
         base: points
+        centroid: true
         texture: icons
         interactive: true
         blend: overlay

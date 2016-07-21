@@ -4,6 +4,7 @@ global:
     TOM_multilanguage_label: |
         function() {
             // Use preferred language label if available
+            console.log(feature);
             if (global.labels) {
               return (global.language && feature['name:'+global.language]) || feature.name;
             }
@@ -32,35 +33,30 @@ styles:
                 color: |
                     color.rgb *= vec3(min((worldPosition().z*.001 + .5),1.));
 
-sources:
-    mapzen:
-        type: TopoJSON
-        url:  https://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson
-
 layers:
     earth:
-        data: { source: mapzen }
+        data: { source: mountbatten }
         draw:
             polygons:
                 order: 0
                 color: '#555'
 
     water:
-        data: { source: mapzen }
+        data: { source: mountbatten }
         draw:
             polygons:
                 order: 2
                 color: '#353535'
 
     landuse:
-        data: { source: mapzen }
+        data: { source: mountbatten }
         draw:
             polygons:
                 order: 1
                 color: '#666'
 
     places:
-        data: { source: mapzen }
+        data: { source: mountbatten }
         draw:
             polygons:
                 order: 3
@@ -93,7 +89,7 @@ layers:
                             size: 25px
 
     roads:
-        data: { source: mapzen }
+        data: { source: mountbatten }
         filter:
             not: { kind: ferry }
             $zoom:

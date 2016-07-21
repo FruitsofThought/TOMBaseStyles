@@ -1,0 +1,44 @@
+layers:
+    buildings:
+        data: { source: mountbatten , layer: architecture}
+        buildinglabelsgroup:
+            filter:
+                name: true
+            draw:
+                text:
+                    order: 50
+                    centroid: false
+                    move_into_tile: false
+                    priority: 2
+                    font:
+                        fill: "#eeeeee"
+                        family: Helvetica
+                        size: 13px
+                        weight: bold
+                        stroke:
+                            color: [[10, gray], [15, white]] # fade from gray to white
+                            width: [[14, 1px], [20, 2px]]
+        housenumberlabels:
+            filter :
+                $zoom: { min: 18 }
+            draw:
+                text:
+                    text_source: "addr_housenumber"
+                    font:
+                        fill: white
+                        family: Helvetica
+                        size: 11px
+        wikiicon:
+            filter :
+                wikipedia: true
+            draw:
+                ui-icons-overlay:
+                    size: 16px
+                    visible: true
+                    sprite: wikipedia
+                    centroid: true
+        draw:
+            polygons:
+                order: 50
+                color: '#333'
+                interactive: true
