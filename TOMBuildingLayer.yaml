@@ -16,8 +16,8 @@ layers:
                         size: 13px
                         weight: bold
                         stroke:
-                            color: [[10, gray], [15, white]] # fade from gray to white
-                            width: [[14, 1px], [20, 2px]]
+                            color: [[15, black], [10, white]] # fade from gray to white
+                            width: [[10, 1px], [15, 2px]]
         housenumberlabels:
             filter :
                 $zoom: { min: 18 }
