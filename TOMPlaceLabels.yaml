@@ -1,0 +1,28 @@
+layers:
+    places:
+        labels:
+            filter:
+                name: true
+                kind: [locality]
+                $zoom:
+                    min: 7
+                    max: 14
+            draw:
+                text:
+                    priority: 4
+                    text_source: global.TOM_multilanguage_label
+                    font:
+                        fill: grey
+                        family: Helvetica
+                        size: 18px
+            capital:
+                filter:
+                    country_capital: true
+                    $zoom:
+                        min: 7
+                        max: 9
+                draw:
+                    text:
+                        font:
+                            fill: grey
+                            size: 25px

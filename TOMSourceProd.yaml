@@ -1,5 +1,11 @@
 sources:
     mountbatten:
         type: TopoJSON
-        #urltogeneratethem:  https://tiles.mountbatten.nl:445/all/{z}/{x}/{y}.topojson
-        url: https://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson
+        urltogeneratethem:  https://tiles.mountbatten.nl:445/all/{z}/{x}/{y}.topojson
+        url: "https://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson"
+    mountbattenbuildings:
+        type: TopoJSON
+        url: "https://tiles.mountbatten.nl/buildings/{z}/{x}/{y}.topojson"
+    mapzen:
+        type: TopoJSON
+        url: "https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-KXs7X8B"

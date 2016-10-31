@@ -1,3 +1,6 @@
+import:
+  - ../TOMBaseStyles/TOMPlaceLabels.yaml?a=4
+
 global:
     labels: true
     language: nl
@@ -11,7 +14,7 @@ global:
         }
 scene:
     background:
-        color: '#353535'
+        color: '#ffffff'
 
 cameras:
     perspective:
@@ -24,6 +27,13 @@ lights:
         direction: [.1, .5, -1]
         diffuse: .7
         ambient: .5
+
+settings:
+    places:
+        - &placelabels                '#5C5C5C'
+        - &placelabelscapital         black
+        - &highway_link1              [0.00, 0.00, 0.00]
+        - &water                      '#383858'
 
 styles:
     buildings:
@@ -39,50 +49,37 @@ layers:
         draw:
             polygons:
                 order: 0
-                color: '#555'
+                color: white
 
     water:
         data: { source: mapzen }
         draw:
             polygons:
                 order: 2
-                color: '#353535'
+                color: *water
 
     landuse:
         data: { source: mapzen }
         draw:
             polygons:
                 order: 1
-                color: '#666'
-
+                color: white
     places:
         data: { source: mapzen }
         labels:
-            filter:
-                name: true
-                kind: [locality]
-                $zoom:
-                    min: 7
-                    max: 14
             draw:
                 text:
-                    priority: 4
-                    text_source: global.TOM_multilanguage_label
                     font:
-                        fill: #fff
-                        family: Helvetica
-                        size: 18px
+                        fill: *placelabels
             capital:
-                filter:
-                    country_capital: true
-                    $zoom:
-                        min: 7
-                        max: 9
                 draw:
                     text:
                         font:
-                            fill: #330000
-                            size: 25px
+                            fill: *placelabelscapital
+        draw:
+            polygons:
+                order: 3
+                color: '#404040'
 
     roads:
         data: { source: mapzen }
